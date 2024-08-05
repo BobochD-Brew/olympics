@@ -1,0 +1,15 @@
+
+.error {
+    opacity: 0.6;
+}
+
+.title.error {
+    font-size: 10rem;
+    opacity: 0.8;
+}
+
+.error a {
+    text-decoration: underline;
+    margin-left: 5px;
+    opacity: 1;
+}

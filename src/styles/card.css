@@ -1,0 +1,345 @@
+:root {
+    --window-padding: 10vh;
+    --card-padding: 8vh 10vh 7.5vh 10vh;
+}
+
+@keyframes fadeBlur {
+    0% {
+        opacity: 0;
+        filter: blur(2px);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0px);
+    }
+}
+
+@keyframes fadeBlurHard {
+    0% {
+        filter: blur(5px);
+    }
+    100% {
+        filter: blur(0px);
+    }
+}
+
+.cardContainer {
+    animation: 1s cubic-bezier(0.32, 0, 0.67, 0) 0s 1 fadeBlurHard;
+    width: 100%;
+    height: 100%;
+    padding: var(--window-padding);
+}
+
+.cardTilt {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes flyingCard {
+    0% {
+        transform: perspective(100cm) skewY(50deg) rotateY(120deg) rotateX(-80deg)  translate(100vw, -100vh) scale(0.01);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: perspective(none) skewY(0deg) rotateY(0deg) rotateX(0) translate(0, 0) scale(1.0) ;
+        opacity: 1;
+    }
+}
+
+.card {
+    animation: 1s cubic-bezier(0.32, 0, 0.67, 0) 0s 1 flyingCard;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--card-padding);
+    clip-path: inset(0 0 0 0);
+    background-color: #fbf9f9;
+    transition-duration: 500ms;
+    transition-property: background-color;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    background: url("/paper.jpg");
+    pointer-events: none;
+    background-position: center;
+    background-size: cover;
+    mix-blend-mode: multiply;
+    opacity: 1;
+}
+
+.cardVideo {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    opacity: 0.0;
+    transition-duration: 500ms;
+    transition-property: opacity;
+    pointer-events: none;
+    z-index: -10 !important;
+    height: 100%;
+    width: 100%;
+    transform: translateX(-50%);
+    object-fit: cover;
+    mix-blend-mode: overlay;
+    filter: brightness(0.5);
+}
+
+.title {
+    animation: 0.5s linear 0s 1 hide, 
+        1s cubic-bezier(0.32, 0, 0.67, 0) 0.5s 1 fadeBlur;
+    font-weight: 600;
+    font-size: 1.7rem;
+    color: black;
+    transition-property: color;
+    transition-duration: 500ms;
+}
+
+.gap {
+    flex: 1 1 0;
+}
+
+.details {
+    animation: 1s linear 0s 1 hide, 
+        1s cubic-bezier(0.32, 0, 0.67, 0) 1s 1 fadeBlur;
+    font-size: 0.8rem;
+    margin-bottom: 30px;
+    color: #656662;
+    transition-duration: 500ms;
+    transition-property: color;
+}
+
+.source {
+    animation: 1.2s linear 0s 1 hide, 
+        1s cubic-bezier(0.32, 0, 0.67, 0) 1.2s 1 fadeBlur;
+    font-size: 1.1rem;
+    color: #93908b;
+    transition-duration: 500ms;
+    transition-property: color;
+}
+
+.details a,
+.source a{
+    transition-duration: 500ms !important;
+}
+
+.card.hovered .source,
+.card.hovered .details,
+.card.hovered .ringMedals,
+.card.hovered .ringTitle,
+.card.hovered .title {
+    color: white !important;
+    mix-blend-mode: normal;
+}
+
+.card > *:not(.canvas) {
+    z-index: 1;
+}
+
+.canvas {
+    position: absolute;
+}
+
+canvas {
+    position: relative;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 2500px) {
+    .title {
+        font-size: 3rem;
+    }
+
+    .details {
+        font-size: 1.5rem;
+    }
+
+    .source {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 3500px) {
+    .title {
+        font-size: 4rem;
+    }
+
+    .details {
+        font-size: 2rem;
+    }
+
+    .source {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 1535px) {
+    :root {
+        --window-padding: 6vh;
+        --card-padding: 10vh 3vh 7vh 3vh;
+    }
+
+    * {
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+    .title {
+        font-size: 1.6rem;
+    }
+
+    .details {
+        font-size: 0.6rem;
+        margin-bottom: 10px;
+    }
+
+    .source {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .title {
+        font-size: 1rem;
+    }
+
+    .details {
+        font-size: 0.4rem;
+        margin-bottom: 10px;
+    }
+
+    .source {
+        font-size: 0.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --window-padding: 4vh;
+    }
+
+    * {
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+    .details {
+        font-size: 0.3rem;
+        margin-bottom: 5px;
+    }
+
+    .source {
+        font-size: 0.6rem;
+    }
+
+    .title {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 635px) {
+    :root {
+        --card-padding: 10vh 2vh 5vh 2vh;
+    }
+
+    .details {
+        font-size: 0.4rem;
+        margin-bottom: 10px;
+    }
+
+    .source {
+        font-size: 0.5rem;
+    }
+}
+
+@media (max-width: 580px) {
+    .title {
+        font-size: 0.9rem;
+    }
+
+    .details {
+        font-size: 0.3rem;
+        margin-bottom: 5px;
+    }
+
+    .source {
+        font-size: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .title {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 900px) and (orientation: portrait) {
+    .title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 710px) and (orientation: portrait) {
+    .title {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 600px) and (orientation: portrait) {
+    .title {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 500px) and (orientation: portrait) {
+    .title {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 420px) and (orientation: portrait) {
+    .title {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 340px) and (orientation: portrait) {
+    .title {
+        font-size: 0.5rem;
+    }
+}
+
+@media (max-width: 320px) and (orientation: landscape) {
+    .title {
+        font-size: 0.3rem;
+    }
+
+    .details {
+        font-size: 0.15rem;
+        margin-bottom: 2px;
+    }
+
+    .source {
+        font-size: 0.2rem;
+    }
+}
+

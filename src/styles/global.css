@@ -1,0 +1,131 @@
+@font-face {
+    font-family: "Manrope";
+    src: url("/fonts/Manrope-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Manrope";
+    src: url("/fonts/Manrope-ExtraBold.woff2") format("woff2");
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: "Manrope";
+    src: url("/fonts/Manrope-Medium.woff2") format("woff2");
+    font-weight: 400;
+}
+
+body {
+    margin: 0;
+    font-family: "Manrope", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: url('/background.jpg') !important;
+    transition-duration: 10000s;
+    transition-property: background-image;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    height: 100svh;
+}
+
+* {
+    touch-action: none;
+    -webkit-user-callout: none;
+    box-sizing: border-box;
+    text-align: center;
+    -webkit-user-drag: none;
+    -webkit-user-modify: none;
+    -webkit-highlight: none;
+}
+
+*,
+*:active,
+*:focus {
+    outline: none;
+}
+
+::-moz-selection {
+    color: white;
+    background: black;
+}
+
+::selection {
+    color: white;
+    background: black;
+}
+
+@keyframes back {
+    0% {
+        background-color: rgba(0.0, 0.0, 0.0, 1.0);
+    }
+    100% {
+        background-color: rgba(0.0, 0.0, 0.0, 0.0);
+    }
+}
+
+#app {
+    animation: 0.5s cubic-bezier(0.32, 0, 0.67, 0) 0s 1 back;
+    background-color: rgba(0.0, 0.0, 0.0, 0.0);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    height: 100svh;
+}
+
+.img{
+    pointer-events: none;
+    -webkit-user-drag: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+a {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: transparent;
+    transition-property: color, background-color;
+    transition-duration: 200ms;
+}
+
+a:hover {
+    color: white;
+}
+
+a::before {
+    content: '';
+    background-color: transparent;
+    transition-property: width;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.32, 0, 0.67, 0);
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 100%;
+}
+
+a:hover::before {
+    background-color: black;
+    width: 100%;
+}
+
+@keyframes hide {
+    0%, 100% {
+        opacity: 0;
+    }
+}

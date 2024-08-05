@@ -1,0 +1,22 @@
+{
+    "name": "vite-project",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "start": "vite preview"
+    },
+    "dependencies": {
+        "three": "^0.167.1"
+    },
+    "devDependencies": {
+        "@types/three": "^0.167.1",
+        "autoprefixer": "^10.4.20",
+        "postcss-preset-env": "^10.0.0",
+        "rollup-plugin-terser": "^7.0.2",
+        "typescript": "^5.2.2",
+        "vite": "^5.3.4"
+    }
+}

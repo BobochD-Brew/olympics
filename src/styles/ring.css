@@ -1,0 +1,342 @@
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.ringHover {
+    position: absolute;
+    left: 50%;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ringHover:hover .ringShape {
+    opacity: 1;
+}
+
+.ringShape {
+    width: 60%;
+    height: 60%;
+    opacity: 0;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition-duration: 500ms;
+    transition-property: opacity;
+    pointer-events: none;
+    mix-blend-mode: lighten;
+}
+
+.ringData {
+    --ringDataDistance: 7vh;
+    position: absolute;
+    left: 50%;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+.ringMedals {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.7rem;
+    transition-property: color;
+    transition-duration: 500ms;
+}
+
+.ringMedals > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    gap: 5px;
+}
+
+.ringMedals > div:nth-child(1) > .medalIcon {
+    background: linear-gradient(to top, #fbe334 0%, #fdf4c3 100%);
+}
+
+.ringMedals > div:nth-child(2) > .medalIcon {
+    background: linear-gradient(to top, #d2cdca 0%, #f3f0f0 100%);
+}
+
+.ringMedals > div:nth-child(3) > .medalIcon {
+    background: linear-gradient(to top, #fa9e1b 0%, #fce7be 100%);
+}
+
+.ringMedals > div > div {
+    animation: var(--delay) linear 0s 1 hide, 
+        1s cubic-bezier(0.32, 0, 0.67, 0) var(--delay) 1 fade;
+}
+
+.ringMedals > div:nth-child(1) > .medalIcon {
+    --delay: 1s;
+}
+
+.ringMedals > div:nth-child(1) > *:last-child {
+    --delay: 1.25s;
+}
+
+.ringMedals > div:nth-child(2) > .medalIcon {
+    --delay: 1.5s;
+}
+
+.ringMedals > div:nth-child(2) > *:last-child {
+    --delay: 1.75s;
+}
+
+.ringMedals > div:nth-child(3) > .medalIcon {
+    --delay: 2s;
+}
+
+.ringMedals > div:nth-child(3) > *:last-child {
+    --delay: 2.25s;
+}
+
+.medalIcon {
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+}
+
+.ringTitle {
+    animation: 0.75s linear 0s 1 hide, 
+        1s cubic-bezier(0.32, 0, 0.67, 0) 0.5s 1 fade;
+    text-align: center;
+    text-wrap: nowrap;
+    font-weight: 500;
+    mix-blend-mode: multiply;
+    transition-property: color;
+    transition-duration: 500ms;
+    font-size: 1.2rem;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 2500px) {
+    .ringTitle {
+        font-size: 2rem;
+    }
+
+    .ringMedals {
+        font-size: 1.4rem;
+        gap: 20px;
+    }
+
+    .ringMedals > div {
+        gap: 10px;
+    }
+}
+
+@media (min-width: 3500px) {
+    .ringTitle {
+        font-size: 3rem;
+    }
+
+    .medalIcon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .ringMedals {
+        margin-top: 15px;
+        font-size: 1.6rem;
+        gap: 30px;
+    }
+
+    .ringMedals > div {
+        gap: 15px;
+    }
+
+    .ringData {
+        --ringDataDistance: 8vh;
+    }
+}
+
+@media (max-width: 1535px) {
+    .ringTitle {
+        font-size: 0.9rem;
+    }
+
+    .medalIcon {
+        width: 5px;
+        height: 5px;
+    }
+
+    .ringMedals {
+        gap: 10px;
+        font-size: 0.6rem;
+    }
+
+    .ringMedals > div {
+        gap: 5px;
+    }
+}
+
+@media (max-width: 900px) {
+    .ringTitle {
+        font-size: 1rem;
+    }
+
+    .medalIcon {
+        width: 5px;
+        height: 5px;
+    }
+}
+
+@media (max-width: 800px) {
+    .ringTitle {
+        font-size: 0.5rem;
+    }
+
+    .medalIcon {
+        width: 4px;
+        height: 4px;
+    }
+
+    .ringMedals {
+        gap: 10px;
+        font-size: 0.3rem;
+        margin-top: -2px;
+        gap: 5px;
+    }
+
+    .ringMedals > div {
+        gap: 2.5px;
+    }
+
+    .ringData {
+        --ringDataDistance: 6vh;
+    }
+}
+
+@media (max-width: 560px) {
+    .ringTitle {
+        font-size: 0.4rem;
+    }
+
+    .medalIcon {
+        width: 2.5px;
+        height: 2.5px;
+    }
+
+    .ringMedals {
+        gap: 5px;
+        font-size: 0.3rem;
+        margin-top: -2px;
+    }
+
+    .ringMedals > div {
+        gap: 2.5px;
+    }
+
+    .ringData {
+        --ringDataDistance: 7vh;
+    }
+}
+
+@media (max-width: 820px) and (orientation: portrait) {
+    .ringTitle {
+        font-size: 1.1rem;
+    }
+
+    .ringMedals {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 700px) and (orientation: portrait) {
+    .ringTitle {
+        font-size: 1rem;
+    }
+
+    .ringMedals {
+        font-size: 0.6rem;
+    }
+
+    .ringData {
+        --ringDataDistance: 5vh;
+    }
+}
+
+@media (max-width: 500px) and (orientation: portrait) {
+    .ringTitle {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 410px) and (orientation: portrait) {
+    .ringTitle {
+        font-size: 0.7rem;
+    }
+
+    .ringMedals {
+        font-size: 0.5rem;
+    }
+}
+
+
+@media (max-width: 330px) {
+    .ringTitle {
+        font-size: 0.5rem;
+    }
+
+    .ringMedals {
+        font-size: 0.4rem;
+    }
+}
+
+@media (max-width: 330px) and (orientation: landscape) {
+    .ringTitle {
+        font-size: 0.3rem;
+    }
+
+    .ringMedals {
+        font-size: 0.15rem;
+        gap: 3px;
+        margin-top: -3px;
+    }
+
+    .ringMedals > div {
+        gap: 1px;
+    }
+
+    .ringData {
+        --ringDataDistance: 8vh;
+    }
+}
+
+@media (max-width: 250px) and (orientation: landscape) {
+    .ringTitle {
+        font-size: 0.2rem;
+    }
+
+    .ringMedals {
+        font-size: 0.1rem;
+        gap: 2px;
+        margin-top: -4px;
+    }
+
+    .ringMedals > div {
+        gap: 1px;
+    }
+
+    .ringMedals > div > .medalIcon {
+        width: 2px;
+        height: 2px;
+    }
+
+    .ringData {
+        --ringDataDistance: 9vh;
+    }
+}
