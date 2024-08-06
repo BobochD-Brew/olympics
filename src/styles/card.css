@@ -192,11 +192,6 @@ canvas {
         --card-padding: 10vh 3vh 7vh 3vh;
     }
 
-    * {
-        user-select: none;
-        -webkit-user-select: none;
-    }
-
     .title {
         font-size: 1.6rem;
     }
@@ -287,14 +282,17 @@ canvas {
     }
 }
 
-@media (max-width: 900px) and (orientation: portrait) {
-    .title {
-        font-size: 1.5rem;
-    }
+@media (max-width: 1500px) and (orientation: portrait) {
 
     * {
         user-select: none;
         -webkit-user-select: none;
+    }
+}
+
+@media (max-width: 900px) and (orientation: portrait) {
+    .title {
+        font-size: 1.5rem;
     }
 }
 
