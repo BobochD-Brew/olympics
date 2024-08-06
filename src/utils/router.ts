@@ -5,7 +5,7 @@ export function createApp(root: HTMLElement, routes: Record<string, () => DOM>) 
     function handleRouteChange() {
         const path = window.location.pathname;
         const route = routes[path];
-        if(!route) return navigateTo('404');
+        if(!route) return navigateTo('/404');
         root.innerHTML = "";
         attach(route())(root);
     }

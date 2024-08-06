@@ -49,7 +49,7 @@ export default function Mountains() {
     moutains.position.y = -3;
     
     useEffect(() => {
-        moutains.position.y = -3 - Math.max(0, fov() - 1.5) * 3;
+        moutains.position.y = -3 - Math.max(0, fov() - 1.2) * 3;
         uniforms.scale.value = scale * Math.max(1, fov() - 0.5);
         uniforms.frequency.value = spacialFrequency / Math.max(1, (fov() - 0.5) * 0.5);
     })

@@ -12,6 +12,7 @@ export default async function Rings() {
 
     const maxWidth = Object.values(data).reduce((acc: number, it: any) => it.total > acc ? it.total : acc, 0);
     const width = (continent: string) => Math.sqrt(data[continent].total / maxWidth) * 0.2;
+    const isHex = window.location.pathname !== "/circles";
 
     return [
         Ring({
@@ -21,8 +22,8 @@ export default async function Rings() {
             shape: "/shapes/africa.svg",
             position: new Vector3(0,baseHeight + ySpacing / 2, 0),
             width: width("Africa"),
-            color: "#000000",
-            zMaskRotation: -Math.PI * 3 / 4,
+            color: isHex ? "#5eaaca" : "#000000",
+            zMaskRotation: isHex ? -Math.PI * 2 / 3 : -Math.PI * 3 / 4,
             maskLength: Math.PI,
             zIndex: 0,
         }),
@@ -33,8 +34,8 @@ export default async function Rings() {
             shape: "/shapes/europe.svg",
             position: new Vector3(-xSpacing,baseHeight + ySpacing / 2, 0),
             width: width("Europe"),
-            color: "#5eaaca",
-            zMaskRotation: -Math.PI/4,
+            color: isHex ? "#e5303d" : "#5eaaca",
+            zMaskRotation: isHex ? -Math.PI / 3 : -Math.PI/4,
             maskLength: Math.PI/2,
             zIndex: 0,
         }),
@@ -45,8 +46,8 @@ export default async function Rings() {
             shape: "/shapes/america.svg",
             position: new Vector3(xSpacing,baseHeight + ySpacing / 2, 0),
             width: width("America"),
-            color: "#e5303d",
-            zMaskRotation: -Math.PI * 4 / 5,
+            color: isHex ? "#499d6e" : "#e5303d",
+            zMaskRotation: isHex ? -Math.PI * 2 / 3 : -Math.PI * 4 / 5,
             maskLength: Math.PI * 2 / 3,
             zIndex: 0,
         }),
@@ -57,8 +58,8 @@ export default async function Rings() {
             shape: "/shapes/oceania.svg",
             position: new Vector3(xSpacing / 2,baseHeight - ySpacing / 2, 0),
             width: width("Oceania"),
-            color: "#499d6e",
-            zMaskRotation: Math.PI * 4 / 5,
+            color: isHex ? "#fac531" : "#499d6e",
+            zMaskRotation: isHex ? Math.PI * 2 / 3 : Math.PI * 4 / 5,
             maskLength: Math.PI/2,
             zIndex: 1,
         }),
@@ -69,7 +70,7 @@ export default async function Rings() {
             shape: "/shapes/asia.svg",
             position: new Vector3(-xSpacing / 2,baseHeight - ySpacing / 2,0),
             width: width("Asia"),
-            color: "#fac531",
+            color: isHex ? "#000000" : "#fac531",
             zMaskRotation: Math.PI * 0.5,
             maskLength: 0,
             zIndex: 1,

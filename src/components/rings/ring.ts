@@ -38,8 +38,9 @@ export default async function Ring({
     const { fov } = useWindow();
     const { scene, camera } = useScene();
 
+    const isHex = window.location.pathname !== "/circles";
     const radius = 0.7;
-    const segments = 50;
+    const segments = isHex ? 6 : 50;
     const delay = Math.random() * 1500;
 
     const geometry = new TorusGeometry(radius, width / 2, 8, segments);
@@ -58,7 +59,7 @@ export default async function Ring({
     ring.castShadow = true;
 
     if(maskLength > 0){
-        const maskGeometry = new RingGeometry(radius - width / 2, radius + width / 2, segments, 0, 0, maskLength);
+        const maskGeometry = new RingGeometry(radius - width / 2, radius + width / 2, segments / 2, 0, 0, isHex ? Math.PI : maskLength);
         mask = new Mesh(maskGeometry, material.clone());
         mask.material.transparent = true;
         mask.material.opacity = maskOpacity;

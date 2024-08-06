@@ -18,8 +18,8 @@
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/preview.jpg" />
     <style>
-        body { background-image: black; }
-        #app { background-color: rgba(0.0, 0.0, 0.0, 1.0); }
+        body { background-color: black; height: 100vh; height: 100dvh; height: 100svh; width: 100vw; overflow: hidden }
+        #app { background-color: rgba(0.0, 0.0, 0.0, 1.0); height: 100vh; height: 100dvh; height: 100svh; width: 100vw; }
     </style>
     <title>Olympic Medals</title>
 </head>
@@ -30,130 +30,129 @@
 
     <!-- SEO -->
     <div id="SEO-BODY" style="transform: translateX(200vw); position: fixed;">
-        <div class="cardContainer">
-            <div class="cardTilt"
-                style="transform: perspective(400vh) rotateX(0.0970262rad) rotateY(0.0752128rad) rotateZ(-2.45506e-07rad); filter: brightness(1.03757);">
-                <div class="card" style="background-color: rgb(251, 249, 249);">
-                    <div class="canvas"><canvas data-engine="three.js r167" width="2000" height="1282"
-                            style="display: block; width: 2000px; height: 1282px;"></canvas></div>
-                    <div class="title">Olympic medals per continent* in Paris 2024</div>
-                    <div class="gap"></div>
-                    <div class="details">* The composition of nations by continent and their subregions is based on UN's
+        <div>
+            <div >
+                <div >
+                    <div><canvas data-engine="three.js r167" width="2000" height="1282"
+                            ></canvas></div>
+                    <div>Olympic medals per continent* in Paris 2024</div>
+                    <div></div>
+                    <div>* The composition of nations by continent and their subregions is based on UN's
                         'macro geographical (continental) regions', which can be found in: <a
                             href="https://unstats.un.org/unsd/methodology/m49/"
                             target="_blank">https://unstats.un.org/unsd/methodology/m49/</a></div>
-                    <div class="source">Source: <a href="https://www.olympiandatabase.com/"
+                    <div>Source: <a href="https://www.olympiandatabase.com/"
                             target="_blank">https://www.olympiandatabase.com/</a></div>
-                    <div class="ringData"
-                        style="top: calc(50% + 2.8vh); transform: translate(calc(-50% + 0 * 19.2vh / 1.3), calc(-50% - 0.5 * 19.2vh / 1.3 + (0.7 * 19.2vh / 1.3 + var(--ringDataDistance)) * -1));">
-                        <div class="ringTitle" style="color: rgb(0, 0, 0);">Africa: <span
-                                style="font-weight:800">10</span></div>
-                        <div class="ringMedals">
+                    <div
+                        >
+                        <div >Africa: <span
+                                >10</span></div>
+                        <div>
                             <div>
-                                <div class="medalIcon"></div>
+                                <div></div>
                                 <div>3</div>
                             </div>
                             <div>
-                                <div class="medalIcon"></div>
+                                <div></div>
                                 <div>3</div>
                             </div>
                             <div>
-                                <div class="medalIcon"></div>
+                                <div></div>
                                 <div>4</div>
                             </div>
                         </div>
                     </div>
-                    <div class="ringHover"
-                        style="top: calc(50% + 2.8vh); z-index: 10; transform: translate(calc(-50% + 0vh), calc(-50% - 9.08462vh)); width: calc(21.3024vh); height: calc(21.3024vh);">
-                        <img class="ringShape" src="/shapes/africa.svg"></div>
-                    <div class="ringData"
-                        style="top: calc(50% + 2.8vh); transform: translate(calc(-50% + -1.6 * 19.2vh / 1.3), calc(-50% - 0.5 * 19.2vh / 1.3 + (0.7 * 19.2vh / 1.3 + var(--ringDataDistance)) * -1));">
-                        <div class="ringTitle" style="color: rgb(94, 170, 202);">Europe: <span
-                                style="font-weight:800">223</span></div>
-                        <div class="ringMedals">
+                    <div
+                        >
+                        <img src="/shapes/africa.svg"></div>
+                    <div
+                        >
+                        <div >Europe: <span
+                                >223</span></div>
+                        <div>
                             <div>
-                                <div class="medalIcon"></div>
+                                <div></div>
                                 <div>69</div>
                             </div>
                             <div>
-                                <div class="medalIcon"></div>
+                                <div></div>
                                 <div>70</div>
                             </div>
                             <div>
-                                <div class="medalIcon"></div>
+                                <div></div>
                                 <div>84</div>
                             </div>
                         </div>
                     </div>
-                    <div class="ringHover"
-                        style="top: calc(50% + 2.8vh); z-index: 10; transform: translate(calc(-50% - 23.6308vh), calc(-50% - 9.08462vh)); width: calc(23.6308vh); height: calc(23.6308vh);">
-                        <img class="ringShape" src="/shapes/europe.svg"></div>
-                    <div class="ringData"
-                        style="top: calc(50% + 2.8vh); transform: translate(calc(-50% + 1.6 * 19.2vh / 1.3), calc(-50% - 0.5 * 19.2vh / 1.3 + (0.7 * 19.2vh / 1.3 + var(--ringDataDistance)) * -1));">
-                        <div class="ringTitle" style="color: rgb(229, 48, 61);">America: <span
-                                style="font-weight:800">117</span></div>
-                        <div class="ringMedals">
+                    <div
+                        >
+                        <img src="/shapes/europe.svg"></div>
+                    <div
+                        >
+                        <div >America: <span
+                                >117</span></div>
+                        <div>
                             <div>
-                                <div class="medalIcon"></div>
+                                <div></div>
                                 <div>31</div>
                             </div>
                             <div>
-                                <div class="medalIcon"></div>
+                                <div></div>
                                 <div>39</div>
                             </div>
                             <div>
-                                <div class="medalIcon"></div>
+                                <div></div>
                                 <div>47</div>
                             </div>
                         </div>
                     </div>
-                    <div class="ringHover"
-                        style="top: calc(50% + 2.8vh); z-index: 10; transform: translate(calc(-50% + 23.6308vh), calc(-50% - 9.08462vh)); width: calc(22.8165vh); height: calc(22.8165vh);">
-                        <img class="ringShape" src="/shapes/america.svg"></div>
-                    <div class="ringData"
-                        style="top: calc(50% + 2.8vh); transform: translate(calc(-50% + 0.8 * 19.2vh / 1.3), calc(-50% - -0.19999999999999998 * 19.2vh / 1.3 + (0.7 * 19.2vh / 1.3 + var(--ringDataDistance)) * 0.8));">
-                        <div class="ringTitle" style="color: rgb(73, 157, 110);">Oceania: <span
-                                style="font-weight:800">39</span></div>
-                        <div class="ringMedals">
+                    <div
+                        >
+                        <img src="/shapes/america.svg"></div>
+                    <div
+                        >
+                        <div >Oceania: <span
+                                >39</span></div>
+                        <div>
                             <div>
-                                <div class="medalIcon"></div>
+                                <div></div>
                                 <div>14</div>
                             </div>
                             <div>
-                                <div class="medalIcon"></div>
+                                <div></div>
                                 <div>16</div>
                             </div>
                             <div>
-                                <div class="medalIcon"></div>
+                                <div></div>
                                 <div>9</div>
                             </div>
                         </div>
                     </div>
-                    <div class="ringHover"
-                        style="top: calc(50% + 2.8vh); z-index: 11; transform: translate(calc(-50% + 11.8154vh), calc(-50% + 1.25385vh)); width: calc(21.9122vh); height: calc(21.9122vh);">
-                        <img class="ringShape" src="/shapes/oceania.svg"></div>
-                    <div class="ringData"
-                        style="top: calc(50% + 2.8vh); transform: translate(calc(-50% + -0.8 * 19.2vh / 1.3), calc(-50% - -0.19999999999999998 * 19.2vh / 1.3 + (0.7 * 19.2vh / 1.3 + var(--ringDataDistance)) * 0.8));">
-                        <div class="ringTitle" style="color: rgb(250, 197, 49);">Asia: <span
-                                style="font-weight:800">144</span></div>
-                        <div class="ringMedals">
+                    <div
+                        >
+                        <img src="/shapes/oceania.svg"></div>
+                    <div
+                        >
+                        <div >Asia: <span
+                                >144</span></div>
+                        <div>
                             <div>
-                                <div class="medalIcon"></div>
+                                <div></div>
                                 <div>51</div>
                             </div>
                             <div>
-                                <div class="medalIcon"></div>
+                                <div></div>
                                 <div>41</div>
                             </div>
                             <div>
-                                <div class="medalIcon"></div>
+                                <div></div>
                                 <div>52</div>
                             </div>
                         </div>
                     </div>
-                    <div class="ringHover"
-                        style="top: calc(50% + 2.8vh); z-index: 11; transform: translate(calc(-50% - 11.8154vh), calc(-50% + 1.25385vh)); width: calc(23.0506vh); height: calc(23.0506vh);">
-                        <img class="ringShape" src="/shapes/asia.svg"></div>
+                    <div
+                        >
+                        <img src="/shapes/asia.svg"></div>
                 </div>
             </div>
         </div>
