@@ -12,7 +12,7 @@ export default async function Rings() {
 
     const maxWidth = Object.values(data).reduce((acc: number, it: any) => it.total > acc ? it.total : acc, 0);
     const width = (continent: string) => Math.sqrt(data[continent].total / maxWidth) * 0.2;
-    const isHex = window.location.pathname !== "/circles";
+    const isHex = window.location.pathname === "/hex";
 
     return [
         Ring({

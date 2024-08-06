@@ -7,6 +7,6 @@ const root = document.querySelector<HTMLButtonElement>('#app')!;
 
 createApp(root, {
     "/": () => Home(),
-    "/circles": () => Home(),
+    "/hex": () => Home(),
     "/404": () => lazy(import("@Pages/404")),
 })

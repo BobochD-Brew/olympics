@@ -38,7 +38,7 @@ export default async function Ring({
     const { fov } = useWindow();
     const { scene, camera } = useScene();
 
-    const isHex = window.location.pathname !== "/circles";
+    const isHex = window.location.pathname === "/hex";
     const radius = 0.7;
     const segments = isHex ? 6 : 50;
     const delay = Math.random() * 1500;
