@@ -26,7 +26,7 @@ export default function LazyCard({ cardContent, cardTilt, lazyChilds }: LazyCard
     const tmpEuler = new Euler();
 
     const damping = 0.99;
-    const spinForce = 0.0002;
+    const spinForce = 0.02;
 
     useMouse(({ x, y }) => {
         let posOnScreenX = ((x) / window.innerWidth) * 2 - 1;
@@ -62,12 +62,11 @@ export default function LazyCard({ cardContent, cardTilt, lazyChilds }: LazyCard
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;
         const isTouch = event instanceof TouchEvent;
-        const clickX = (isTouch ? event.touches[0].clientX : event.clientX) - centerX;
-        const clickY = (isTouch ? event.touches[0].clientY : event.clientY) - centerY;
-        const angle = spinForce * Math.sqrt(clickX*clickX + clickY*clickY) / Math.sqrt(rect.width*rect.width + rect.height*rect.height);
-        tmpQuaternion.setFromUnitVectors(tmpVector.set(1, 0, 0), tmpVector2.set(1, 0, -clickX * angle));
+        const clickX = ((isTouch ? event.touches[0].clientX : event.clientX) - centerX) / rect.width;
+        const clickY = ((isTouch ? event.touches[0].clientY : event.clientY) - centerY) / rect.height;
+        tmpQuaternion.setFromUnitVectors(tmpVector.set(1, 0, 0), tmpVector2.set(1, 0, -clickX * spinForce * (event.shiftKey ? 10 : 1)));
         angularVelocity.multiply(tmpQuaternion);
-        tmpQuaternion.setFromUnitVectors(tmpVector.set(0, 1, 0), tmpVector2.set(0, 1, -clickY * angle));
+        tmpQuaternion.setFromUnitVectors(tmpVector.set(0, 1, 0), tmpVector2.set(0, 1, -clickY * spinForce * (event.shiftKey ? 10 : 1)));
         angularVelocity.multiply(tmpQuaternion);
     }
     

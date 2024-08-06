@@ -23,8 +23,8 @@ body {
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-image: url('/background.jpg') !important;
-    transition-duration: 10000s;
+    background-image: url('/backgroundHD.jpg');
+    transition-duration: 2000s;
     transition-property: background-image;
     background-size: cover;
     background-position: center;

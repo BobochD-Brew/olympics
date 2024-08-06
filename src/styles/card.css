@@ -231,11 +231,6 @@ canvas {
         --window-padding: 4vh;
     }
 
-    * {
-        user-select: none;
-        -webkit-user-select: none;
-    }
-
     .details {
         font-size: 0.3rem;
         margin-bottom: 5px;
@@ -295,6 +290,11 @@ canvas {
 @media (max-width: 900px) and (orientation: portrait) {
     .title {
         font-size: 1.5rem;
+    }
+
+    * {
+        user-select: none;
+        -webkit-user-select: none;
     }
 }
 
