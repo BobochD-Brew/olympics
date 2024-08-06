@@ -6,8 +6,6 @@ import Mountains from "@Components/mountains";
 
 export default function Home() {
 
-    document.body.style.backgroundImage = 'url(/backgroundHD.jpg)';
-
     const title = document.createElement('div');
     title.classList.add('title');
     title.textContent = 'Olympic medals per continent* in Paris 2024';
